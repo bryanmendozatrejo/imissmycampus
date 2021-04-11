@@ -15,7 +15,7 @@ var onYouTubeIframeAPIReady = () => {
             'playsinline': 1,
             'rel': 0,
             'enablejsapi': 1,
-            'vq': 'hd1080'
+            'vq': '4k2160'
         }
     });
 }

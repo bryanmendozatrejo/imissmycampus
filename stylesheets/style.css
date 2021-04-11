@@ -33,19 +33,38 @@
 }
 
 .spotify-content {
+    /*
     max-width: 100vw;
     max-height: auto;
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 1em;
+    */
+    
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
 }
 
+h1 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/*
+To hide numbers for ordered list
 ol li{
     list-style-type: none;
     color:white;
   }
-
+*/
 @media (max-width: 700px) {
     .campuses {
         margin-top: 10px;
