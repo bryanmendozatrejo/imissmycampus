@@ -1,43 +1,242 @@
-.video-background {
+/* Author of this CSS code: Oliver on StackOverflow
+ * Link: https://stackoverflow.com/questions/24579785/force-iframe-youtube-video-to-center-fit-and-full-cover-the-screen-in-the-backgr
+ */
+ .video-background {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.video-background iframe {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 120vw;
+    height: 120vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Needed to disable pausing */
 }
-
+  
 @media (min-aspect-ratio: 16/9) {
-    .video-background {
-        width: 100%;
-        height: auto;
+    .video-background iframe {
+        /* height = 100 * (9 / 16) = 56.25 */
+        height: 56.25vw;
     }
 }
 
-@media (min-aspect-ratio: 4/3) {
-    .video-background {
-        width: 50%;
-        height: auto;
-    }
-}
-
-@media (max-aspect-ratio: 4/3) {
-    .video-background {
-        width: 1%;
-        height: auto;
+@media (max-aspect-ratio: 16/9) {
+    .video-background iframe {
+        /* width = 100 / (9 / 16) = 177.777777*/
+        width: 177.78vh;
     }
 }
 
 .spotify-content {
+    /*
     max-width: 100vw;
     max-height: auto;
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
     margin: 1em;
+    */
+    
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
 }
+
+h1 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/*
+To hide numbers for ordered list
+ol li{
+    list-style-type: none;
+    color:white;
+  }
+*/
+@media (max-width: 700px) {
+    .campuses {
+        margin-top: 10px;
+    }
+}
+.campuses {
+    padding: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    background: hsla(0,0%,94%,.4);
+    border-radius: 3px;
+    border: 1px solid hsla(0,0%,94%,.5);
+}
+.column {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#campuses {
+    padding: 1% 2%;
+    left: 0;
+    bottom: 0;
+    height: 170px;
+    background: rgba(33,33,33,.6);
+    border-radius: 3px;
+    overflow-y: auto;
+}
+
+.Campuses {
+    text-align: left;
+    padding: 1px 15px;
+    border: 0;
+    margin: 2px;
+}
+
+.Button, .mobileButton {
+    padding: 1px 2px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: small;
+    transition: background-color .5s ease;
+}
+
+@media (max-width: 700px) {
+    #panel {
+        overflow-y: scroll;
+        height: 100%;
+        width: 37%;
+        position: absolute;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-top: 15px;
+        bottom: 0;
+        background: rgba(33,33,33,.5);
+        color: #fff;
+    }
+}
+#panel {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    height: 100%;
+    width: 23%;
+    max-width: 400px;
+    position: absolute;
+    padding: 10px 26px 3px;
+    right: 0;
+    background: rgba(33,33,33,.5);
+    color: #fff;
+    z-index: 2;
+}
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+* {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.App {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    font-family: Avenir,Helvetica,sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+#panel::-webkit-scrollbar {
+    display: none;
+}
+
+
+/**********************************/
 
 .card-container {
     margin: 1em;

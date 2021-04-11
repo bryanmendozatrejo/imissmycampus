@@ -32,7 +32,7 @@ auth.onAuthStateChanged(function (user) {
     if (user) {
         var email = user.email;
         alert("Active user: " + email);
-        //window.location.replace('../index.html');
+        window.location.replace('../index.html');
         // is signed in
     } else {
         //alert("Not logged in.");
