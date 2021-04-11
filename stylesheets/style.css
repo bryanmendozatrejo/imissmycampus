@@ -1,27 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.header {
-    background: rgba(0, 0, 100, 0.4);
-    height: 100vh;
-}
-
-.video-background {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-}
-
-@media (min-aspect-ratio: 16/9) {
-    .video-background {
-        width: 100%;
-        height: auto;
-    }
+html {
+    min-height: fit-content;
 }
