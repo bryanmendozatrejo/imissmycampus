@@ -1,6 +1,6 @@
 Citrus Hack 2021: Create Your Zen
 
-#Inspiration
+#Inspiration#
 
 As the pandemic has forced us to take online classes, many upcoming freshmen and transfer students didn't have a chance to see their campus! I miss my campus solves this by showing you a first-person view of the campus.
 
